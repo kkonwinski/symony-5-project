@@ -7,5 +7,5 @@
 /var/
 /vendor/
 /.env
+/tutorial/
 ###< symfony/framework-bundle ###
-!/tutorial/
