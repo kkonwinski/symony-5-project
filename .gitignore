@@ -9,3 +9,4 @@
 /.env
 /tutorial/
 ###< symfony/framework-bundle ###
+/.idea/
