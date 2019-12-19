@@ -17,6 +17,7 @@ class MarkdownHelper
 
     public function __construct(AdapterInterface $cache, MarkdownInterface $markdown, LoggerInterface $markdownLogger, bool $isDebug)
     {
+        $this->cache = $cache;
         $this->markdown = $markdown;
         $this->cache = $cache;
         $this->logger = $markdownLogger;
@@ -31,9 +32,8 @@ class MarkdownHelper
         if (stripos($source, 'placerat') != false) {
             $this->logger->info('Coś tam!!!');
         }
-        dump($this->cache);
-        die;
-        $item = $this->cache->getItem('markdown' . md5($source));
+
+        $item = $this->cache->getItem('markdown_' . md5($source));
         if (!$item->isHit()) {
             $item->set($this->markdown->transform($source));
             $this->cache->save($item);
