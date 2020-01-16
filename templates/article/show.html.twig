@@ -14,7 +14,7 @@
                                 <span class="align-left article-details"><img class="article-author-img rounded-circle"
                                                                               src="{{ asset('images/alien-profile.png') }}"> Mike Ferengi </span>
                                 <span class="pl-2 article-details">
-                                {{ article.publishedAt ? article.publishedAt|date('Y-m-d'): "unpulished" }}
+                                {{ article.publishedAt ? article.publishedAt|ago: "unpulished" }}
                                 </span>
                                 <span class="pl-2 article-details"> <span class="js-like-article-count">5</span> <a
                                             href="{{ path('article_toggle_heart',{slug: article.slug}) }}"
@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="article-text">
-                                {{ article.content|cached_markdown }}
+                                {{ article.content|cached_markdown|raw }}
                             </div>
                         </div>
                     </div>

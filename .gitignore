@@ -10,3 +10,7 @@
 /tutorial/
 ###< symfony/framework-bundle ###
 /.idea/
+/.idea/
+config/packages/translation.yaml
+config/secrets/dev/
+translations/
