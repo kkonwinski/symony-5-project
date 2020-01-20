@@ -1,4 +1,4 @@
-/.idea/
+.idea/
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -9,8 +9,7 @@
 /.env
 /tutorial/
 ###< symfony/framework-bundle ###
-/.idea/
-/.idea/
 config/packages/translation.yaml
 config/secrets/dev/
 translations/
+.env/

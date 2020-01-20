@@ -42,8 +42,12 @@ class ArticleController extends AbstractController
     /**
      * @Route("news/{slug}/heart", name="article_toggle_heart",methods={"POST"})
      */
-    public function toggleArticleHeart($slug)
+    public function toggleArticleHeart(Article $article, EntityManagerInterface $em)
     {
-        return new JsonResponse(['hearts' => rand(5, 100)]);
+        //symfony automatycznid wyszukuje konkretny objekt na podstawie sluga/id
+
+$article->incrementHeartCount();
+$em->flush();
+        return new JsonResponse(['hearts' => $article->getHeartCount()]);
     }
 }
