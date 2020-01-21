@@ -27,7 +27,6 @@ class ArticleFixtures extends BaseFixtures
     {
         $this->createMany(Article::class, 10, function (Article $article, $count) {
             $article->setTitle($this->faker->randomElement(self::$articleTitles))
-                ->setSlug($this->faker->slug)
                 ->setContent(<<<EOF
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. **Nulla sodales ex lorem**, sit amet porttitor elit tincidunt nec. Mauris nec eros sed velit gravida viverra ac quis mi. Vivamus sodales dictum eros, id bibendum dui euismod in. Curabitur efficitur consequat tincidunt. Cras accumsan est vitae pharetra consequat. Proin vel egestas diam. Vestibulum a pretium massa. Vestibulum sapien neque, suscipit eu feugiat eu, faucibus vel dui. [Pellentesque nisi](https://wp.pl/), etiam pretium justo a congue varius. Morbi lectus metus, mattis sit amet eros et, venenatis scelerisque arcu. Suspendisse at sem aliquet, accumsan eros ut, fringilla leo.
 
