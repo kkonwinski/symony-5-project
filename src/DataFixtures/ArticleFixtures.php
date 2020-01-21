@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Article;
+use App\Entity\Comment;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -25,7 +26,7 @@ class ArticleFixtures extends BaseFixtures
 
     protected function loadData(ObjectManager $manager)
     {
-        $this->createMany(Article::class, 10, function (Article $article, $count) {
+        $this->createMany(Article::class, 10, function (Article $article, $count) use ($manager) {
             $article->setTitle($this->faker->randomElement(self::$articleTitles))
                 ->setContent(<<<EOF
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. **Nulla sodales ex lorem**, sit amet porttitor elit tincidunt nec. Mauris nec eros sed velit gravida viverra ac quis mi. Vivamus sodales dictum eros, id bibendum dui euismod in. Curabitur efficitur consequat tincidunt. Cras accumsan est vitae pharetra consequat. Proin vel egestas diam. Vestibulum a pretium massa. Vestibulum sapien neque, suscipit eu feugiat eu, faucibus vel dui. [Pellentesque nisi](https://wp.pl/), etiam pretium justo a congue varius. Morbi lectus metus, mattis sit amet eros et, venenatis scelerisque arcu. Suspendisse at sem aliquet, accumsan eros ut, fringilla leo.
@@ -36,6 +37,16 @@ EOF
             $article->setAuthor($this->faker->randomElement(self::$articleAuthors))
                 ->setHeartCount($this->faker->numberBetween(5, 100))
                 ->setImageFilename($this->faker->randomElement(self::$articleImages));
+            $comment1 = new Comment();
+            $comment1->setAuthorName("Krzysztof Konwiński");
+            $comment1->setContent("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi sapien, volutpat eu posuere suscipit, faucibus eu diam.");
+            $comment1->setArticle($article);
+            $manager->persist($comment1);
+            $comment2 = new Comment();
+            $comment2->setAuthorName("Adam Miałczyński");
+            $comment2->setContent("Cras et consequat orci. Nulla vehicula, ipsum a sagittis vulputate, ex eros feugiat velit, sit amet blandit mauris sapien a justo. Donec congue finibus ex, vel vestibulum diam imperdiet a. Integer pellentesque feugiat pulvinar. Quisque lobortis aliquam justo ut pulvinar.");
+            $comment2->setArticle($article);
+            $manager->persist($comment2);
             if ($this->faker->boolean(70)) {
                 $article->setPublishedAt($this->faker->dateTimeBetween('-100 days', '-1days'));
             }
