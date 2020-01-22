@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use App\Repository\CommentRepository;
 use App\Service\MarkdownHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,10 +33,14 @@ class ArticleController extends AbstractController
      */
     public function show(Article $article)
     {
-        $comments = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at dignissim ex.', ' In tempor eleifend porttitor. Sed nec fermentum ligula. Aenean varius nisl et hendrerit luctus. [Pellentesque nisi] (https://wp.pl/) justo, vehicula a blandit non, fermentum et quam. Cras id libero in sem porttitor dignissim. Duis quam ligula, fringilla sit amet ornare sit amet, suscipit nec turpis. ', 'Pellentesque placerat egestas nunc, ac suscipit tellus blandit quis. Mauris sit amet augue quis libero vehicula tincidunt eu non magna. Duis tempor neque id sollicitudin fermentum. Nunc sed rhoncus nisl.'];
+// dwa z trzech sposobów przechwytywania danych za pomoca relacji
+//        $comments->findBy(['article'=>$article]);
+//        $comments = $article->getComments();
+
+
         return $this->render('article/show.html.twig', [
             'article' => $article,
-            'comments' => $comments,
+         //   'comments' => $comments,
         ]);
     }
 
