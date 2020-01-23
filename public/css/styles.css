@@ -96,6 +96,8 @@ html {height:100%}
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background: #fff;
+    border-top: 2px solid green;
+
 }
 
 .main-article-link, .article-container a {

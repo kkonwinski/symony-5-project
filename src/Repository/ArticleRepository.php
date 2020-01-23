@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\QueryBuilder;
 
@@ -46,6 +47,19 @@ class ArticleRepository extends ServiceEntityRepository
     }
 
 
+    /**
+     * wybiera i wyświetla tylko komentarze które nie maja statusu false (nie są usunięte), przekazanie funkcji do encji Article a na nasępnie do widoku article/show
+     * lepsza opcja niż sprawdzanie w kontrolerze za pomoca pętli gdy jest dużo danych
+     * create = polecenie mówiące utwórz kryteriu do filtrowania/wyszukiwania
+     * expr = expression czyli wyrażenie daje znać że będzie to zapytanie na podsawie kryteriów
+     * eq = equals tj kolumna i wartość na podstawie których ma zwracać wartości
+     **/
+    public static function createNonDeletedCriteria(): Criteria
+    {
+        return Criteria::create()
+            ->andWhere(Criteria::expr()->eq('isDeleted', false))
+            ->orderBy(['createdAt' => 'DESC']);
+    }
 
     /*
     public function findOneBySomeField($value): ?Article
