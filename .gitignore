@@ -11,5 +11,5 @@
 ###< symfony/framework-bundle ###
 config/packages/translation.yaml
 config/secrets/dev/
-translations/
 .env/
+/.idea/
