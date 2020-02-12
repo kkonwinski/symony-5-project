@@ -9,7 +9,6 @@
 /.env
 /tutorial/
 ###< symfony/framework-bundle ###
-config/packages/translation.yaml
 config/secrets/dev/
 .env/
 /.idea/
