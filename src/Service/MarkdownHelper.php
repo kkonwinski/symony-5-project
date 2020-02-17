@@ -7,6 +7,7 @@ namespace App\Service;
 use Michelf\MarkdownInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
+use Symfony\Component\Security\Core\Security;
 
 class MarkdownHelper
 {
@@ -14,14 +15,16 @@ class MarkdownHelper
     private $markdown;
     private $logger;
     private $isDebug;
+    private $security;
 
-    public function __construct(AdapterInterface $cache, MarkdownInterface $markdown, LoggerInterface $markdownLogger, bool $isDebug)
+    public function __construct(AdapterInterface $cache, MarkdownInterface $markdown, LoggerInterface $markdownLogger, bool $isDebug, Security $security)
     {
         $this->cache = $cache;
         $this->markdown = $markdown;
         $this->cache = $cache;
         $this->logger = $markdownLogger;
         $this->isDebug = $isDebug;
+        $this->security = $security;
     }
 
     public function parse(string $source): string
@@ -29,8 +32,10 @@ class MarkdownHelper
         if ($this->isDebug) {
             return $this->markdown->transform($source);
         }
-        if (stripos($source, 'placerat') != false) {
-            $this->logger->info('Coś tam!!!');
+        if (stripos($source, '') != false) {
+            $this->logger->info('Coś tam!!!', [
+                'user' => $this->security->getUser(),
+            ]);
         }
 
         $item = $this->cache->getItem('markdown_' . md5($source));
