@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,6 +21,17 @@ class AccountController extends BaseController
         $logger->debug("sprawdzam strony dla konta " . $this->getUser()->getEmail());
         return $this->render('account/index.html.twig', [
 
+        ]);
+    }
+
+    /**
+     * @Route("/api/account", name="api_account")
+     */
+    public function accountApi()
+    {
+        $user = $this->getUser();
+        return $this->json($user, 200, [], [
+            'groups' => ['main']
         ]);
     }
 }
