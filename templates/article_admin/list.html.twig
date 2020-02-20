@@ -1,0 +1,12 @@
+{% extends 'content_base.html.twig' %}
+
+{% block content_body %}
+    {% for article in articles %}
+        {{ article.title }}
+        {{ article.author.email }}
+        {{ article.publishedAt ? 'check' : 'times' }}
+        {{ article.title }}
+        <br>
+    {% endfor %}
+{% endblock %}
+
