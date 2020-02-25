@@ -35,7 +35,7 @@ class ArticleAdminController extends AbstractController
 //            $article = new Article();
 //            $article->setTitle($data['tittle']);
 //            $article->setContent($data['content']);
-            $article->setAuthor($this->getUser());
+            //          $article->setAuthor($this->getUser());
 
             $em->persist($article);
             $em->flush();

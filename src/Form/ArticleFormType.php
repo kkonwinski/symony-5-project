@@ -5,11 +5,13 @@ namespace App\Form;
 
 
 use App\Entity\Article;
+use App\Entity\User;
+use App\Repository\ArticleRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use function Sodium\add;
 
 class ArticleFormType extends AbstractType
 {
@@ -22,7 +24,17 @@ class ArticleFormType extends AbstractType
             ->add('content')
             ->add('publishedAt', null, [
                 'widget' => 'single_text'
+            ])
+            ->add('author', EntityType::class, [
+                'class' => User::class,
+                //  'choice_label'=>'email',
+                'choice_label' => function (User $user) {
+                    return sprintf('(%d) %s', $user->getId(), $user->getEmail());
+                    //jeżeli chce jakieś szczególne kryteria wyszukiwania mogę dodać funkcje w ArticleRepository i je wzrócić funkcją return
+                },
+                'placeholder' => '--- Wybierz innego autora ---'
             ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
