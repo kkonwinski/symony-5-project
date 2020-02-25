@@ -1,12 +1,27 @@
 {% extends 'content_base.html.twig' %}
 
 {% block content_body %}
-    {% for article in articles %}
-        {{ article.title }}
-        {{ article.author.email }}
-        {{ article.publishedAt ? 'check' : 'times' }}
-        {{ article.title }}
-        <br>
-    {% endfor %}
+
+    <a href="{{ path('admin_article_new') }}" class="btn btn-primary">Create New Article</a>
+    <br>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author Email</th>
+            <th scope="col">Published</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <th scope="row"> {{ article.title }}</th>
+                <th scope="row"> {{ article.author.email }}</th>
+                <th scope="row">{{ article.publishedAt ? 'check' : 'times' }}</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
 

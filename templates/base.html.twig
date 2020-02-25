@@ -11,6 +11,7 @@
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
               crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {% endblock %}
 </head>
@@ -67,7 +68,9 @@
         </ul>
     </div>
 </nav>
-
+{% for message  in app.flashes('success') %}
+    {{ message }}
+{% endfor %}
 {% block body %}{% endblock %}
 
 <footer class="footer">
