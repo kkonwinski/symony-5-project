@@ -42,7 +42,8 @@ class ArticleFormType extends AbstractType
                     //jeżeli chce jakieś szczególne kryteria wyszukiwania mogę dodać funkcje w ArticleRepository i je wzrócić funkcją return
                 },
                 'placeholder' => '--- Wybierz innego autora ---',
-                'choices' => $this->userRepository->findAllAlphabetical()
+                'choices' => $this->userRepository->findAllAlphabetical(),
+                'invalid_message' => 'nie dasz rady tego wysłać!!!!'
 
             ]);
 

@@ -1,20 +1,20 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "d5a77fe19f57848a49cf36ebb02d6b51",
-    "packages": [
-        {
-            "name": "antishov/doctrine-extensions-bundle",
-            "version": "v1.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/antishov/StofDoctrineExtensionsBundle.git",
-                "reference": "19c8d45e7ceb6477ef490f21ab4279e549c1e828"
-            },
-            "dist": {
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "bf74c0e39f7c98c866247d3d92611302",
+  "packages": [
+    {
+      "name": "antishov/doctrine-extensions-bundle",
+      "version": "v1.4.2",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/antishov/StofDoctrineExtensionsBundle.git",
+        "reference": "19c8d45e7ceb6477ef490f21ab4279e549c1e828"
+      },
+      "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/antishov/StofDoctrineExtensionsBundle/zipball/19c8d45e7ceb6477ef490f21ab4279e549c1e828",
                 "reference": "19c8d45e7ceb6477ef490f21ab4279e549c1e828",
@@ -1399,30 +1399,30 @@
             ],
             "time": "2014-01-12T16:20:24+00:00"
         },
-        {
-          "name": "knplabs/knp-components",
-          "version": "v2.3.3",
-          "source": {
-            "type": "git",
-            "url": "https://github.com/KnpLabs/knp-components.git",
-            "reference": "5a89e60dfe93179f329e35f92ed9348d52143f7b"
-          },
-          "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/5a89e60dfe93179f329e35f92ed9348d52143f7b",
-            "reference": "5a89e60dfe93179f329e35f92ed9348d52143f7b",
-            "shasum": ""
-          },
-            "require": {
-                "php": "^7.2",
-                "symfony/event-dispatcher": "^3.4 || ^4.0 || ^5.0",
-                "symfony/http-foundation": "^3.4 || ^4.0 || ^5.0"
-            },
-            "require-dev": {
-                "doctrine/mongodb-odm": "^2.0",
-                "doctrine/orm": "^2.5",
-                "doctrine/phpcr-odm": "^1.2",
-                "jackalope/jackalope-doctrine-dbal": "^1.2",
+    {
+      "name": "knplabs/knp-components",
+      "version": "v2.3.3",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/KnpLabs/knp-components.git",
+        "reference": "5a89e60dfe93179f329e35f92ed9348d52143f7b"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/5a89e60dfe93179f329e35f92ed9348d52143f7b",
+        "reference": "5a89e60dfe93179f329e35f92ed9348d52143f7b",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.2",
+        "symfony/event-dispatcher": "^3.4 || ^4.0 || ^5.0",
+        "symfony/http-foundation": "^3.4 || ^4.0 || ^5.0"
+      },
+      "require-dev": {
+        "doctrine/mongodb-odm": "^2.0",
+        "doctrine/orm": "^2.5",
+        "doctrine/phpcr-odm": "^1.2",
+        "jackalope/jackalope-doctrine-dbal": "^1.2",
                 "phpunit/phpunit": "^8.0",
                 "ruflin/elastica": "^1.0",
                 "symfony/http-kernel": "^3.4 || ^4.0 || ^5.0",
@@ -1472,7 +1472,7 @@
                 "pager",
                 "paginator"
             ],
-          "time": "2020-02-24T15:11:24+00:00"
+      "time": "2020-02-24T15:11:24+00:00"
         },
         {
             "name": "knplabs/knp-markdown-bundle",
@@ -5360,25 +5360,117 @@
                 "twig/extra-bundle": "^2.12|^3.0",
                 "twig/twig": "^2.12|^3.0"
             },
-            "type": "symfony-pack",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Twig pack for Symfony projects",
-            "time": "2019-10-17T05:44:22+00:00"
+          "type": "symfony-pack",
+          "notification-url": "https://packagist.org/downloads/",
+          "license": [
+            "MIT"
+          ],
+          "description": "A Twig pack for Symfony projects",
+          "time": "2019-10-17T05:44:22+00:00"
+        },
+    {
+      "name": "symfony/validator",
+      "version": "v5.0.4",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/validator.git",
+        "reference": "dcde9e9116f0b0ee8623dafafea0eb7d57954b2e"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/validator/zipball/dcde9e9116f0b0ee8623dafafea0eb7d57954b2e",
+        "reference": "dcde9e9116f0b0ee8623dafafea0eb7d57954b2e",
+        "shasum": ""
+      },
+      "require": {
+        "php": "^7.2.5",
+        "symfony/polyfill-ctype": "~1.8",
+        "symfony/polyfill-mbstring": "~1.0",
+        "symfony/translation-contracts": "^1.1|^2"
+      },
+      "conflict": {
+        "doctrine/lexer": "<1.0.2",
+        "phpunit/phpunit": "<5.4.3",
+        "symfony/dependency-injection": "<4.4",
+        "symfony/http-kernel": "<4.4",
+        "symfony/intl": "<4.4",
+        "symfony/translation": "<4.4",
+        "symfony/yaml": "<4.4"
+      },
+      "require-dev": {
+        "doctrine/annotations": "~1.7",
+        "doctrine/cache": "~1.0",
+        "egulias/email-validator": "^2.1.10",
+        "symfony/cache": "^4.4|^5.0",
+        "symfony/config": "^4.4|^5.0",
+        "symfony/dependency-injection": "^4.4|^5.0",
+        "symfony/expression-language": "^4.4|^5.0",
+        "symfony/http-client": "^4.4|^5.0",
+        "symfony/http-foundation": "^4.4|^5.0",
+        "symfony/http-kernel": "^4.4|^5.0",
+        "symfony/intl": "^4.4|^5.0",
+        "symfony/property-access": "^4.4|^5.0",
+        "symfony/property-info": "^4.4|^5.0",
+        "symfony/translation": "^4.4|^5.0",
+        "symfony/yaml": "^4.4|^5.0"
+      },
+      "suggest": {
+        "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
+        "doctrine/cache": "For using the default cached annotation reader.",
+        "egulias/email-validator": "Strict (RFC compliant) email validation",
+        "psr/cache-implementation": "For using the mapping cache.",
+        "symfony/config": "",
+        "symfony/expression-language": "For using the Expression validator",
+        "symfony/http-foundation": "",
+        "symfony/intl": "",
+        "symfony/property-access": "For accessing properties within comparison constraints",
+        "symfony/property-info": "To automatically add NotNull and Type constraints",
+        "symfony/translation": "For translating validation errors.",
+        "symfony/yaml": ""
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "5.0-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Component\\Validator\\": ""
+        },
+        "exclude-from-classmap": [
+          "/Tests/"
+        ]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Fabien Potencier",
+          "email": "fabien@symfony.com"
         },
         {
-            "name": "symfony/var-dumper",
-            "version": "v5.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "923591cfb78a935f0c98968fedfad05bfda9d01f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/923591cfb78a935f0c98968fedfad05bfda9d01f",
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Symfony Validator Component",
+      "homepage": "https://symfony.com",
+      "time": "2020-01-31T09:13:47+00:00"
+    },
+    {
+      "name": "symfony/var-dumper",
+      "version": "v5.0.4",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/var-dumper.git",
+        "reference": "923591cfb78a935f0c98968fedfad05bfda9d01f"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/var-dumper/zipball/923591cfb78a935f0c98968fedfad05bfda9d01f",
                 "reference": "923591cfb78a935f0c98968fedfad05bfda9d01f",
                 "shasum": ""
             },
