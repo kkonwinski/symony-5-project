@@ -49,14 +49,34 @@ class ArticleAdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/article/{id}/edit")
+     * @Route("/admin/article/{id}/edit", name="admin_article_edit")
      * @IsGranted("MANAGE",subject="article")
      */
-    public function edit(Article $article)
+    public function edit(Article $article, Request $request, EntityManagerInterface $em)
     {
-        //$this->denyAccessUnlessGranted('MANAGE',$article);
+//po dodaniu obiektu $article Symfony wrzuca do fomularza dane z bazy danych
+        //update działa na tym samym fomularzu co create więc nie trzeba tworzyć dwóch fomularzy dla każdej funkcji
+        $form = $this->createForm(ArticleFormType::class, $article);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
 
-        dd($article);
+            //jeden z sposobów zapisywania wartości
+            // $data = $form->getData();
+//            $article = new Article();
+//            $article->setTitle($data['tittle']);
+//            $article->setContent($data['content']);
+            //          $article->setAuthor($this->getUser());
+
+            $em->persist($article);
+            $em->flush();
+            $this->addFlash('success', "Article Updated");
+            return $this->redirectToRoute('admin_article_edit', [
+                'id' => $article->getId()
+            ]);
+        }
+        return $this->render('article_admin/edit.html.twig', [
+            'articleForm' => $form->createView(),
+        ]);
     }
 
     /**

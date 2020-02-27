@@ -1,0 +1,14 @@
+{{ form_start(articleForm) }}
+    {#    wyswietla wszystko z klasy ArticleType#}
+    {#    {{ form_widget(articleForm) }}#}
+
+    {#    wyświetla pola encji tylko te które chcemy z klasy ArticleType#}
+    {{ form_row(articleForm.title,{
+        label: 'Article title'
+    }) }}
+    {{ form_label(articleForm.title,'Article title') }}
+    {{ form_row(articleForm.content) }}
+    {{ form_row(articleForm.publishedAt) }}
+    {{ form_row(articleForm.author) }}
+<button type="submit" class="btn btn-primary">{{ button_text }}</button>
+{{ form_end(articleForm) }}

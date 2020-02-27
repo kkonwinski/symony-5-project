@@ -11,14 +11,18 @@
             <th scope="col">Title</th>
             <th scope="col">Author Email</th>
             <th scope="col">Published</th>
+            <th>&nbsp;</th>
         </tr>
         </thead>
         <tbody>
         {% for article in articles %}
             <tr>
-                <th scope="row"> {{ article.title }}</th>
-                <th scope="row"> {{ article.author.email }}</th>
-                <th scope="row">{{ article.publishedAt ? 'check' : 'times' }}</th>
+                <td scope="row"> {{ article.title }}</td>
+                <td scope="row"> {{ article.author.email }}</td>
+                <td scope="row" class="{{ article.publishedAt ? 'fa fa-check' : 'fa fa-close' }}"></td>
+                <td><a href="{{ path('admin_article_edit',{
+                        'id':article.id
+                    }) }}"><span class="fa fa-pencil"></span> </a></td>
             </tr>
         {% endfor %}
         </tbody>
