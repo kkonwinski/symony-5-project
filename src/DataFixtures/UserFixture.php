@@ -24,6 +24,7 @@ class UserFixture extends BaseFixture
             $user = new User();
             $user->setEmail(sprintf('spacebar%d@example.com', $i));
             $user->setFirstName($this->faker->firstName);
+            $user->agreedTerms();
             //dodaje dane randomowo
             if ($this->faker->boolean) {
                 $user->setTwitterUsername($this->faker->userName);
@@ -41,6 +42,7 @@ class UserFixture extends BaseFixture
             $user = new User();
             $user->setEmail(sprintf('spacebara%dadmin@example.com', $i));
             $user->setFirstName($this->faker->firstName);
+            $user->agreedTerms();
             $user->setRoles(['ROLE_ADMIN']);
             $user->setPassword($this->userPasswordEncoder->encodePassword(
                 $user, 'asdf'
