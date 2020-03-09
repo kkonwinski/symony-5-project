@@ -34,18 +34,9 @@ class ArticleFormType extends AbstractType
             ->add('publishedAt', null, [
                 'widget' => 'single_text'
             ])
-            ->add('author', EntityType::class, [
-                'class' => User::class,
-                //  'choice_label'=>'email',
-                'choice_label' => function (User $user) {
-                    return sprintf('(%d) %s', $user->getId(), $user->getEmail());
-                    //jeżeli chce jakieś szczególne kryteria wyszukiwania mogę dodać funkcje w ArticleRepository i je wzrócić funkcją return
-                },
-                'placeholder' => '--- Wybierz innego autora ---',
-                'choices' => $this->userRepository->findAllAlphabetical(),
-                'invalid_message' => 'nie dasz rady tego wysłać!!!!'
+            ->add('author', UserSelectTextType::class);//jeżeli chce jakieś szczególne kryteria wyszukiwania mogę dodać funkcje w ArticleRepository i je wzrócić funkcją return
 
-            ]);
+        ;
 
     }
 
